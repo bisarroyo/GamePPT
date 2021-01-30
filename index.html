@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Fontawesome-->
+    <script src="./all.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            Juego Piedra,Pepel y tijera!
+        </h1>
+    </header>
+    <main>
+        <h2>
+            Selecciona piedra, papel o tijeras:
+        </h2>
+        <p class="description">
+            Selecciona alguna opción y la máquina al azar jugará contra ti.
+        </p>
+        <section>
+            <div class="game">
+                <button class="game__stone" id="stone">
+                    <i class="fas fa-hand-rock icon-1"></i>
+                </button>
+                <button class="game__paper" id="paper">
+                    <i class="fas fa-hand-paper icon-1"></i>
+                </button>
+                <button class="game__scissors" id="scissors">
+                    <i class="fas fa-hand-scissors icon-1"></i>
+                </button>
+            </div>
+            <div class="machine">
+                <div class="machine__resultado">
+                    <p id="resultado" >Esperando selección</p>
+                </div>
+                <div class="machine__resultado">
+                    <p >la máquina ha seleccionado:</p>
+                </div>
+                <div id="machine" class="machine__selection">
+                    <i class="fas fa-hourglass-half icon-1"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./practica.js"></script>
+</body>
+</html>
