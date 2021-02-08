@@ -15,14 +15,34 @@
         </h1>
     </header>
     <main>
-        <h2>
-            Selecciona piedra, papel o tijeras:
-        </h2>
-        <p class="description">
-            Selecciona alguna opción y la máquina al azar jugará contra ti.
-        </p>
+        <section class="results">
+            <div class="results__data">
+                <p class="left">Has ganado:</p>
+                <p id="win-result" class="rigth">0</p>
+            </div>
+            <div class="results__data">
+                <p class="left">has empatado:</p>
+                <p id="draw-result" class="rigth">0</p>
+            </div>
+            <div class="results__data">
+                <p class="left">Has perdido:</p>
+                <p id="loss-result" class="rigth">0</p>
+            </div>
+        </section>
         <section>
-            <div class="game">
+            <div id="machine" class="machine-selection">
+                <i class="fas fa-hourglass-half icon-1"></i>
+            </div>
+            <div class="result-game">
+                <p id="result-game">Esperando...</p>
+            </div>
+            <div class="machine-selection">
+                <p id="resultado" >Esperando selección</p>
+            </div>
+        </section>
+        <section>
+            <p>Selecciona tu opción:</p>
+            <div class="game-selection">
                 <button class="game__stone" id="stone">
                     <i class="fas fa-hand-rock icon-1"></i>
                 </button>
@@ -32,17 +52,6 @@
                 <button class="game__scissors" id="scissors">
                     <i class="fas fa-hand-scissors icon-1"></i>
                 </button>
-            </div>
-            <div class="machine">
-                <div class="machine__resultado">
-                    <p id="resultado" >Esperando selección</p>
-                </div>
-                <div class="machine__resultado">
-                    <p >la máquina ha seleccionado:</p>
-                </div>
-                <div id="machine" class="machine__selection">
-                    <i class="fas fa-hourglass-half icon-1"></i>
-                </div>
             </div>
         </section>
     </main>
