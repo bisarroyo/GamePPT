@@ -1,36 +1,17 @@
-var teclas = {
-    UNO: 49,
-    DOS: 50,
-    TRES: 51
-  };
+var stone = document.getElementById("stone").addEventListener("click", function(){game(1)});
+var paper = document.getElementById("paper").addEventListener("click", function(){game(2)});
+var scissors = document.getElementById("scissors").addEventListener("click", function(){game(3)});
 
 var piedra = 1;
 var papel = 2;
 var tijera = 3;
 
-document.addEventListener("keyup", game);
-
+//storage numbr of times the player win draw or loss.
 var win = [];
 var draw = [];
 var loss = [];
 
-function game(key)
-{
-    var maquina = parseInt(Math.random() * 3 + 1);
-    switch (key.keyCode)
-    {
-        case teclas.UNO:
-            logica(piedra);
-        break;
-        case teclas.DOS:
-            logica(papel);
-        break
-        case teclas.TRES:
-            logica(tijera);
-        break
-    }
-}
-function logica(user)
+function game(user)
 {
     var maquina = parseInt(Math.random() * 3 + 1);
     var select;
@@ -59,11 +40,13 @@ function logica(user)
     {
         document.getElementById("resultado").innerHTML = "Has ganado !!!"
         document.getElementById("machine").innerHTML = select;
+        document.getElementById("result-game").innerHTML = result;
         win.push(1);
     }else
     {
         document.getElementById("resultado").innerHTML = "Has perdido !!!"
         document.getElementById("machine").innerHTML = select;
+        document.getElementById("result-game").innerHTML = result;
         loss.push(1);
     }
     console.log("la opción de la maquina es: " + maquina);
@@ -79,4 +62,3 @@ function logica(user)
         break
     }
 }
-
