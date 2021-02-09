@@ -1,0 +1,9 @@
+h1 {
+    font-size: 3rem;
+}
+p {
+    font-size: 2rem;
+}
+.machine-area__result, .machine-area__selection  {
+    padding-top: 3px;
+}
