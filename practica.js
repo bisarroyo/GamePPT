@@ -34,17 +34,22 @@ function logica(user)
 {
     var maquina = parseInt(Math.random() * 3 + 1);
     var select;
+    var result;
     if (maquina === 1){
-        select = "<i class='fas fa-hand-rock icon-1'></i>";
+        select = "<i class='fas fa-hand-rock icon-machine'></i>";
+        result = "<p id='result-game'>Piedra</p>";
     }else if (maquina === 2){
-        select = "<i class='fas fa-hand-paper icon-1'></i>";
+        select = "<i class='fas fa-hand-paper icon-machine'></i>";
+        result = "<p id='result-game'>Papel</p>";
     }else {
-        select = "<i class='fas fa-hand-scissors icon-1'></i>";
+        select = "<i class='fas fa-hand-scissors icon-machine'></i>";
+        result = "<p id='result-game'>Tijera</p>";
     }
     if (user === maquina)
     {
-        document.getElementById("resultado").innerHTML = "Has empatado";
+        document.getElementById("resultado").innerHTML = "Has empatado !!!";
         document.getElementById("machine").innerHTML = select;
+        document.getElementById("result-game").innerHTML = result;
         draw.push(1);
     }else if (
         (user === piedra && maquina === tijera) ||
@@ -52,17 +57,19 @@ function logica(user)
         (user === tijera && maquina === papel)
         )
     {
-        document.getElementById("resultado").innerHTML = "Has ganado"
+        document.getElementById("resultado").innerHTML = "Has ganado !!!"
         document.getElementById("machine").innerHTML = select;
         win.push(1);
     }else
     {
-        document.getElementById("resultado").innerHTML = "Has Perdido"
+        document.getElementById("resultado").innerHTML = "Has perdido !!!"
         document.getElementById("machine").innerHTML = select;
         loss.push(1);
     }
     console.log("la opción de la maquina es: " + maquina);
-    document.getElementById("global").innerHTML = `Ha ganado: ${win.length}, ha perdido: ${loss.length}, ha empatado: ${draw.length}`;
+    document.getElementById("win-result").innerHTML = win.length;
+    document.getElementById("loss-result").innerHTML = loss.length;
+    document.getElementById("draw-result").innerHTML = draw.length;
     switch (true){
         case (win.length === 3):
             alert("Has ganado a la máquina");

@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Piedra, papel o tijera</title>
     <!--Fontawesome-->
     <script src="./all.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!--Responsive desing-->
+    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 600px)">
 </head>
 <body>
     <header>
@@ -21,7 +23,7 @@
                 <p id="win-result" class="rigth">0</p>
             </div>
             <div class="results__data">
-                <p class="left">has empatado:</p>
+                <p class="left">Has empatado:</p>
                 <p id="draw-result" class="rigth">0</p>
             </div>
             <div class="results__data">
@@ -30,28 +32,34 @@
             </div>
         </section>
         <section>
-            <div id="machine" class="machine-selection">
-                <i class="fas fa-hourglass-half icon-1"></i>
-            </div>
-            <div class="result-game">
-                <p id="result-game">Esperando...</p>
-            </div>
-            <div class="machine-selection">
-                <p id="resultado" >Esperando selección</p>
+            <div class="machine-area">
+                <div class="machine-area__box">
+                    <div id="machine-area__result" class="machine-area__result">
+                        <p id="result-game">Esperando...</p>
+                    </div>
+                    <div id="machine" class="machine-area__icon">
+                        <i class="fas fa-hourglass-half icon-machine"></i>
+                    </div>
+                    <div class="machine-area__selection">
+                        <p id="resultado" >Esperando selección</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section>
-            <p>Selecciona tu opción:</p>
+            <p class="option-text">Selecciona tu opción:</p>
             <div class="game-selection">
-                <button class="game__stone" id="stone">
-                    <i class="fas fa-hand-rock icon-1"></i>
-                </button>
-                <button class="game__paper" id="paper">
-                    <i class="fas fa-hand-paper icon-1"></i>
-                </button>
-                <button class="game__scissors" id="scissors">
-                    <i class="fas fa-hand-scissors icon-1"></i>
-                </button>
+                <div class="game-selection__box">
+                    <button class="game__icon" id="stone">
+                        <i class="fas fa-hand-rock icon-1"></i>
+                    </button>
+                    <button class="game__icon" id="paper">
+                        <i class="fas fa-hand-paper icon-1"></i>
+                    </button>
+                    <button class="game__icon" id="scissors">
+                        <i class="fas fa-hand-scissors icon-1"></i>
+                    </button>
+                </div>
             </div>
         </section>
     </main>
