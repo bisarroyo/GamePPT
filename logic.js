@@ -1,21 +1,27 @@
-var stone = document.getElementById("stone").addEventListener("click", function(){game(1)});
-var paper = document.getElementById("paper").addEventListener("click", function(){game(2)});
-var scissors = document.getElementById("scissors").addEventListener("click", function(){game(3)});
+let stone = document.getElementById("stone").addEventListener("click", () => game(1));
+let paper = document.getElementById("paper").addEventListener("click", () => game(2));
+let scissors = document.getElementById("scissors").addEventListener("click", () => game(3));
 
-var piedra = 1;
-var papel = 2;
-var tijera = 3;
+let piedra = 1;
+let papel = 2;
+let tijera = 3;
 
-//storage numbr of times the player win draw or loss.
-var win = [];
-var draw = [];
-var loss = [];
+//storage number of times the player win draw or loss.
+let win = [];
+let draw = [];
+let loss = [];
+
+function writeHTML(result, icon, iconResult) {
+    document.getElementById("resultado").innerHTML = result;
+    document.getElementById("machine").innerHTML = icon;
+    document.getElementById("result-game").innerHTML = iconResult;
+};
 
 function game(user)
 {
-    var maquina = parseInt(Math.random() * 3 + 1);
-    var select;
-    var result;
+    let maquina = parseInt(Math.random() * 3 + 1);
+    let select;
+    let result;
     if (maquina === 1){
         select = "<i class='fas fa-hand-rock icon-machine'></i>";
         result = "<p id='result-game'>Piedra</p>";
@@ -28,9 +34,7 @@ function game(user)
     }
     if (user === maquina)
     {
-        document.getElementById("resultado").innerHTML = "Has empatado !!!";
-        document.getElementById("machine").innerHTML = select;
-        document.getElementById("result-game").innerHTML = result;
+        writeHTML("Has empatado", select, result);
         draw.push(1);
     }else if (
         (user === piedra && maquina === tijera) ||
@@ -38,15 +42,11 @@ function game(user)
         (user === tijera && maquina === papel)
         )
     {
-        document.getElementById("resultado").innerHTML = "Has ganado !!!"
-        document.getElementById("machine").innerHTML = select;
-        document.getElementById("result-game").innerHTML = result;
+        writeHTML("Has ganado", select, result);
         win.push(1);
     }else
     {
-        document.getElementById("resultado").innerHTML = "Has perdido !!!"
-        document.getElementById("machine").innerHTML = select;
-        document.getElementById("result-game").innerHTML = result;
+        writeHTML("Has perdido", select, result);
         loss.push(1);
     }
     console.log("la opción de la maquina es: " + maquina);
@@ -58,7 +58,7 @@ function game(user)
             alert("Has ganado a la máquina");
         break
         case (loss.length === 3):
-            alert("Mas suerte para lapróxima");
+            alert("Más suerte para la próxima");
         break
     }
 }
