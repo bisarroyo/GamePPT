@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "projectgameppt",
+  "version": "1.0.0",
+  "description": "Game about stone,paper and scissors game",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bisarroyo/gameppt.git"
+  },
+  "author": "Bismark Arroyo <bis.arroyo@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bisarroyo/gameppt/issues"
+  },
+  "homepage": "https://github.com/bisarroyo/gameppt#readme"
+}
