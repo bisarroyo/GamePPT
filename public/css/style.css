@@ -1,6 +1,6 @@
 :root {
-    --color-primary: #392f5a;
-    --color-secondary: #18206f ;
+    --color-primary: #845EC2;
+    --color-secondary: #D65DB1;
 }
 *{
     box-sizing: border-box;
@@ -118,7 +118,9 @@ p {
     transition: all 500ms ease;
 }
 .icon-1:hover {
-    color: #aff245;
+    color: var(--color-primary);
+
+    border-radius: 50%;
 }
 .game__icon {
     border: none;
