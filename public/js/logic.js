@@ -11,11 +11,14 @@ let win = [];
 let draw = [];
 let loss = [];
 
-const writeHTML = (result, icon, iconResult) =>
+const resultColor = document.querySelector(".machine-area__selection");
+
+const writeHTML = (result, icon, iconResult, color) =>
 {
     document.getElementById("resultado").innerHTML = result;
     document.getElementById("machine").innerHTML = icon;
     document.getElementById("result-game").innerHTML = iconResult;
+    resultColor.className = `machine-area__selection ${color}`;
 };
 
 function game(user)
@@ -35,7 +38,7 @@ function game(user)
     }
     if (user === maquina)
     {
-        writeHTML("Has empatado", select, result);
+        writeHTML("Has empatado", select, result, "yellow");
         draw.push(1);
     }else if (
         (user === piedra && maquina === tijera) ||
@@ -43,11 +46,11 @@ function game(user)
         (user === tijera && maquina === papel)
         )
     {
-        writeHTML("Has ganado", select, result);
+        writeHTML("Has ganado", select, result, "green");
         win.push(1);
     }else
     {
-        writeHTML("Has perdido", select, result);
+        writeHTML("Has perdido", select, result, "red");
         loss.push(1);
     }
     document.getElementById("win-result").innerHTML = win.length;
